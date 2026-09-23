@@ -14,7 +14,7 @@ const ROWS: Row[] = [
 
 export function PricingTable() {
   return (
-    <table className="pricing-table">
+    <table className="pricing-table" data-component="PricingTable">
       <thead>
         <tr>
           <th scope="col">Region</th>

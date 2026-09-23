@@ -13,7 +13,7 @@ export interface Product {
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="product-card">
+    <article className="product-card" data-component="ProductCard">
       <img className="product-card__image" src={product.image} />
       <h3 className="product-card__name">{product.name}</h3>
       <p className="product-card__price">{product.price}</p>

@@ -14,7 +14,7 @@ const PATHS: Record<IconButtonProps["icon"], string> = {
 
 export function IconButton({ icon, onPress }: IconButtonProps) {
   return (
-    <button className="icon-button" onClick={onPress}>
+    <button className="icon-button" data-component="IconButton" onClick={onPress}>
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6">
         <path d={PATHS[icon]} />
       </svg>
