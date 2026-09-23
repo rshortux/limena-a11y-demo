@@ -24,19 +24,18 @@ are not twelve bugs — they are one component rendered twelve times. A
 tool that reports them as twelve rows is making the backlog look worse
 than the work actually is.
 
-## Why the components carry `data-component`
+## Plain class names, on purpose
 
-Each component renders a `data-component` attribute alongside its ordinary
-class. That is not decoration: limena identifies a component from the
-markup, and its clustering treats any lowercase kebab-case class as a
-Tailwind-style utility, so `icon-button` is discarded exactly as `mt-4`
-would be. Without the attribute the signature falls back to the bare tag
-and the source-file lookup searches the repo for `<button>`, which matches
-nothing.
+Nothing here carries a `data-component` attribute. The classes are ordinary
+kebab-case — `icon-button`, `product-card`, `promo-banner` — which is how a
+great deal of hand-written CSS is named and exactly the shape that used to
+defeat limena's component clustering: the filter could not tell `icon-button`
+from a Tailwind utility like `mt-4`, discarded every class, and fell back to
+the bare tag.
 
-So this fixture is annotated in limena's favour. Anything demonstrated
-with it shows the pipeline working on components limena can already
-identify, not on an arbitrary repo.
+The fixture was briefly annotated to get around that. It is not any more,
+because a demo that only works on markup labelled for it demonstrates the
+labelling. limena resolves these components from the class names alone.
 
 ## Running it
 

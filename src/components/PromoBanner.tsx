@@ -3,7 +3,7 @@
 // requires for text under 18pt. axe-core rule: color-contrast.
 export function PromoBanner({ headline, body }: { headline: string; body: string }) {
   return (
-    <section className="promo-banner" data-component="PromoBanner">
+    <section className="promo-banner">
       <h2 className="promo-banner__headline">{headline}</h2>
       <p className="promo-banner__body">{body}</p>
     </section>
