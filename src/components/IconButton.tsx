@@ -12,10 +12,16 @@ const PATHS: Record<IconButtonProps["icon"], string> = {
   share: "M4 12v7h16v-7M12 3v12M8 7l4-4 4 4",
 };
 
+const LABELS: Record<IconButtonProps["icon"], string> = {
+  cart:  "Add to cart",
+  heart: "Add to favorites",
+  share: "Share",
+};
+
 export function IconButton({ icon, onPress }: IconButtonProps) {
   return (
-    <button className="icon-button" onClick={onPress}>
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <button className="icon-button" onClick={onPress} aria-label={LABELS[icon]}>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
         <path d={PATHS[icon]} />
       </svg>
     </button>
